@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Game Hub">
+  <rect width="256" height="256" rx="56" fill="#15181D"/>
+  <path fill="#FFD200" d="M176 72a56.06 56.06 0 0 1 56 56v40a32 32 0 0 1-55.27 21.91L160 176H96l-16.73 13.91A32 32 0 0 1 24 168v-40a56.06 56.06 0 0 1 56-56ZM88 112H72V96a8 8 0 0 0-16 0v16H40a8 8 0 0 0 0 16h16v16a8 8 0 0 0 16 0v-16h16a8 8 0 0 0 0-16m72 20a12 12 0 1 0 12-12a12 12 0 0 0-12 12m32-32a12 12 0 1 0 12 12a12 12 0 0 0-12-12" transform="translate(0 8) scale(0.94) translate(8 0)"/>
+</svg>

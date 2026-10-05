@@ -1,0 +1,11 @@
+# Единые переводы строк в репозитории, родные — в рабочей копии
+* text=auto eol=lf
+
+# Бинарные файлы git не трогает
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.webp binary
+*.mp4  binary
+*.mov  binary
+*.heic binary
