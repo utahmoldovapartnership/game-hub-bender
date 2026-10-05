@@ -10,6 +10,7 @@ html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
 body {
   margin: 0;
+  -webkit-tap-highlight-color: rgba(21, 24, 29, .12);
   font-family: var(--font-body);
   font-size: var(--fs-base);
   line-height: var(--lh-body);
@@ -62,7 +63,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   width: 100%;
   max-width: var(--maxw);
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  /* max() — чтобы в альбомной ориентации контент не уезжал под «чёлку» */
+  padding-left:  max(var(--gutter), env(safe-area-inset-left));
+  padding-right: max(var(--gutter), env(safe-area-inset-right));
 }
 .section { padding-block: var(--section-y); }
 .section--subtle { background: var(--c-bg-subtle); }
@@ -119,6 +122,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 .grid--2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
 .grid--3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 .grid--4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); }
+/* Мелкие карточки тарифов на телефоне встают по две — прокрутка короче */
+@media (max-width: 639px) {
+  .grid--4 { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+  .grid--4 .package { padding: var(--space-4) var(--space-3); }
+  .grid--4 .package__name { font-size: var(--fs-base); }
+  .grid--4 .package__price { font-size: var(--fs-xl); }
+  .grid--4 .package__for,
+  .grid--4 .package__unit { font-size: var(--fs-xs); }
+}
 
 /* ------------------------------------------------------------ BUTTONS --- */
 .btn {
@@ -302,6 +314,7 @@ ul { margin: 0; padding: 0; list-style: none; }
     linear-gradient(to right, rgba(10,12,15,.6) 0%, rgba(10,12,15,0) 60%);
 }
 .hero__inner { padding-block: var(--space-8) var(--space-7); position: relative; }
+
 .hero__title {
   font-size: var(--fs-hero);
   max-width: 16ch;
@@ -371,6 +384,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero__videotoggle .icon-play { display: none; }
 .hero__videotoggle[aria-pressed="true"] .icon-pause { display: none; }
 .hero__videotoggle[aria-pressed="true"] .icon-play  { display: block; }
+
+/* Телефон в альбомной ориентации: экран низкий, поэтому убираем
+   обязательную высоту и поджимаем отступы — иначе первый экран
+   занимает полтора оборота прокрутки. */
+@media (orientation: landscape) and (max-height: 520px) {
+  .hero { min-height: auto; }
+  .hero__inner { padding-block: var(--space-5) var(--space-4); }
+  /* Заголовок меньше, чтобы кнопка брони попадала на первый экран */
+  .hero__title { font-size: clamp(1.75rem, 4.2vw, 2.75rem); margin-bottom: var(--space-3); }
+  .hero__lead  { margin-bottom: var(--space-4); max-width: 60ch; }
+  .hero__cta   { margin-bottom: var(--space-4); }
+  .status      { margin-bottom: var(--space-3); }
+  .hero__facts { gap: var(--space-2) var(--space-5); padding-top: var(--space-3); }
+}
 
 /* ---------------------------------------------------------- ЕДИНЫЙ ТАРИФ */
 .single-rate {
@@ -734,8 +761,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ------------------------------------------------------------ ГАЛЕРЕЯ --- */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-  gap: var(--space-3);
+  /* На телефоне — две колонки: по одной фотографии в ряд галерея
+     растягивалась больше чем на пять экранов прокрутки. */
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+@media (min-width: 640px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-3);
+  }
 }
 .gallery__item {
   position: relative; display: block;
@@ -1036,6 +1071,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   transition: transform var(--dur-base) var(--ease-out);
 }
 .mobilebar.is-visible { transform: translateY(0); }
+.mobilebar {
+  padding-left:  max(var(--gutter), env(safe-area-inset-left));
+  padding-right: max(var(--gutter), env(safe-area-inset-right));
+}
 .mobilebar .btn { flex: 1; min-height: 48px; font-size: var(--fs-sm); padding-inline: var(--space-4); }
 @media (max-width: 767px) {
   .mobilebar { display: flex; }

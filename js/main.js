@@ -151,10 +151,24 @@
       });
     }
 
-    if (reduceMotion) {
-      // Система просит меньше движения — не запускаем сами, но кнопка работает
+    /*  Экономия мобильного трафика: если в телефоне включён режим
+        экономии данных или связь совсем медленная, фоновое видео (около 3 МБ)
+        не грузим — показываем постер. Запустить можно кнопкой.            */
+    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    var saveData = !!(conn && (conn.saveData === true ||
+                     /(^|-)2g$/.test(conn.effectiveType || '')));
+
+    if (reduceMotion || saveData) {
+      // Система просит меньше движения или экономить трафик:
+      // сами не запускаем, но кнопка работает
       heroVideo.removeAttribute('autoplay');
       heroVideo.pause();
+      if (saveData) {
+        heroVideo.preload = 'none';
+        heroVideo.removeAttribute('src');
+        // прекращаем начатую закачку, постер остаётся на месте
+        heroVideo.load();
+      }
       userPaused = true;
     } else {
       tryPlay();
@@ -166,8 +180,18 @@
     syncToggle();
 
     heroToggle.addEventListener('click', function () {
-      if (heroVideo.paused) { userPaused = false; tryPlay(); }
-      else { userPaused = true; heroVideo.pause(); }
+      if (heroVideo.paused) {
+        userPaused = false;
+        // Если видео не грузили ради экономии трафика — подгружаем сейчас
+        if (!heroVideo.currentSrc && heroVideo.querySelector('source')) {
+          heroVideo.preload = 'auto';
+          heroVideo.load();
+        }
+        tryPlay();
+      } else {
+        userPaused = true;
+        heroVideo.pause();
+      }
     });
 
     // Экономим батарею и трафик: вне экрана видео стоит
