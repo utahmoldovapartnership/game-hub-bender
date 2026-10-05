@@ -113,33 +113,69 @@
   var heroToggle = document.getElementById('heroToggle');
 
   if (heroVideo && heroToggle) {
-    // Уважаем «уменьшить движение»: не запускаем видео автоматически
-    if (reduceMotion) {
-      heroVideo.removeAttribute('autoplay');
-      heroVideo.pause();
-      heroToggle.setAttribute('aria-pressed', 'true');
-      heroToggle.setAttribute('aria-label', 'Запустить фоновое видео');
+
+    // Пользователь сам нажал паузу — тогда ничего не запускаем за него
+    var userPaused = false;
+
+    /*  Состояние кнопки берём ИЗ САМОГО ВИДЕО, а не выставляем руками.
+        Иначе при заблокированном автозапуске кнопка показывала бы «пауза»,
+        хотя видео стоит, и первое нажатие уходило бы впустую.             */
+    function syncToggle() {
+      var paused = heroVideo.paused;
+      heroToggle.setAttribute('aria-pressed', String(paused));
+      heroToggle.setAttribute('aria-label',
+        paused ? 'Запустить фоновое видео' : 'Поставить фоновое видео на паузу');
+    }
+    heroVideo.addEventListener('play',  syncToggle);
+    heroVideo.addEventListener('pause', syncToggle);
+
+    function tryPlay() {
+      var p = heroVideo.play();
+      // В старых браузерах play() ничего не возвращает
+      if (!p || typeof p.catch !== 'function') return;
+      p.catch(function () { syncToggle(); });
     }
 
-    heroToggle.addEventListener('click', function () {
-      if (heroVideo.paused) {
-        heroVideo.play();
-        heroToggle.setAttribute('aria-pressed', 'false');
-        heroToggle.setAttribute('aria-label', 'Поставить фоновое видео на паузу');
-      } else {
-        heroVideo.pause();
-        heroToggle.setAttribute('aria-pressed', 'true');
-        heroToggle.setAttribute('aria-label', 'Запустить фоновое видео');
+    /*  Браузер вправе заблокировать автозапуск: энергосбережение, режим
+        «ограничить мультимедиа» в Edge, низкий заряд на телефоне.
+        Тогда запускаем видео при первом же действии пользователя —
+        он увидит движение, а не застывший кадр.                           */
+    function playOnFirstInteraction() {
+      var events = ['pointerdown', 'keydown', 'touchstart', 'wheel', 'scroll'];
+      function start() {
+        events.forEach(function (ev) { window.removeEventListener(ev, start); });
+        if (!userPaused && heroVideo.paused) tryPlay();
       }
+      events.forEach(function (ev) {
+        window.addEventListener(ev, start, { passive: true });
+      });
+    }
+
+    if (reduceMotion) {
+      // Система просит меньше движения — не запускаем сами, но кнопка работает
+      heroVideo.removeAttribute('autoplay');
+      heroVideo.pause();
+      userPaused = true;
+    } else {
+      tryPlay();
+      // Через полсекунды проверяем, получилось ли
+      setTimeout(function () {
+        if (heroVideo.paused && !userPaused) playOnFirstInteraction();
+      }, 500);
+    }
+    syncToggle();
+
+    heroToggle.addEventListener('click', function () {
+      if (heroVideo.paused) { userPaused = false; tryPlay(); }
+      else { userPaused = true; heroVideo.pause(); }
     });
 
-    // Экономим батарею/трафик: останавливаем видео, когда герой вне экрана
+    // Экономим батарею и трафик: вне экрана видео стоит
     if ('IntersectionObserver' in window) {
       var heroObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          var pausedByUser = heroToggle.getAttribute('aria-pressed') === 'true';
-          if (pausedByUser || reduceMotion) return;
-          if (entry.isIntersecting) heroVideo.play().catch(function () {});
+          if (userPaused || reduceMotion) return;
+          if (entry.isIntersecting) tryPlay();
           else heroVideo.pause();
         });
       }, { threshold: 0.1 });
