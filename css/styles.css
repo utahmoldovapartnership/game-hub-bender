@@ -664,7 +664,25 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-bottom: var(--space-1);
 }
 .package__unit { font-size: var(--fs-sm); color: var(--c-text-muted); margin-bottom: var(--space-5); }
-.package__list { display: grid; gap: var(--space-2); margin-bottom: var(--space-5); font-size: var(--fs-sm); }
+/* Поясняющая строка перед перечнем — не пункт списка, галочки у неё нет */
+.package__intro {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  margin-bottom: var(--space-3);
+}
+.package__list { display: grid; gap: var(--space-2); margin-bottom: var(--space-4); font-size: var(--fs-sm); }
+
+/* Условие тарифа, а не услуга: отдельная серая строка внизу карточки.
+   Крестик рядом с перечнем услуг читался бы как «не предоставляется». */
+.package__note {
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: var(--c-text-muted);
+  background: var(--c-bg-subtle);
+  border-radius: var(--r-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-5);
+}
 .package__list li { display: flex; gap: var(--space-2); align-items: flex-start; }
 .package__list svg { width: 18px; height: 18px; flex: none; margin-top: 3px; color: var(--c-success); }
 .package__list li.is-excluded { color: var(--c-text-muted); }
