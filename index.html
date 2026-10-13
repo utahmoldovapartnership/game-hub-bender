@@ -835,7 +835,7 @@
       <p class="section__lead">Фотографии публикуются с согласия родителей.</p>
     </div>
 
-    <div class="gallery reveal">
+    <div class="gallery reveal" data-lightbox>
       <!-- data-full: путь к большой версии для лайтбокса -->
       <button class="gallery__item gallery__item--wide" type="button" data-full="assets/img/photo-31-1280.jpg" aria-label="Открыть фото: дети отдыхают на мягких мешках перед экраном">
         <img src="assets/img/photo-31-640.jpg" width="640" height="320" loading="lazy" decoding="async" alt="Дети отдыхают на мягких мешках перед большим экраном">
@@ -887,46 +887,85 @@
       </p>
     </div>
 
-    <!-- ЗАГЛУШКА: заменить реальными отзывами (скриншоты из Instagram / текст) -->
-    <div class="placeholder reveal" style="margin-bottom: var(--space-6)">
-      <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-chat"/></svg>
-      <h3>Место для реальных отзывов</h3>
-      <p>Ниже — примеры вёрстки. Пришлите 4–6 отзывов (текст + имя), и мы заменим
-      содержимое карточек. Скриншоты из Instagram можно разместить отдельной лентой.</p>
-      <span class="placeholder__note">Ожидаем материалы</span>
-    </div>
-
     <div class="grid grid--3">
       <article class="review reveal">
         <div class="review__stars" role="img" aria-label="Оценка 5 из 5">
           <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg>
         </div>
-        <p class="review__text">Текст отзыва о праздновании дня рождения будет здесь.</p>
+        <p class="review__text">Спасибо огромное за праздник и ваше гостеприимство 💗
+          Было очень здорово! Очень рада, что отмечали у вас!</p>
         <div class="review__author">
-          <span class="review__avatar" aria-hidden="true">?</span>
-          <span><span class="review__name">Имя родителя</span><span class="review__meta">День рождения</span></span>
+          <span class="review__avatar" aria-hidden="true">K</span>
+          <span class="review__who"><span class="review__name wrap-anywhere">@kolchinaolechka</span><span class="review__meta">Детский праздник</span></span>
         </div>
       </article>
+
       <article class="review reveal">
         <div class="review__stars" role="img" aria-label="Оценка 5 из 5">
           <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg>
         </div>
-        <p class="review__text">Текст отзыва о посещении игровой зоны будет здесь.</p>
+        <p class="review__text">Выражаем вам, Татьяна, и вашим администраторам огромную
+          благодарность за вчерашний праздник! 😍🎉 Всё прошло замечательно, именинник
+          получил массу приятных эмоций, гости не хотели уходить! Администраторы всегда
+          помогали деткам, подсказывали, исправляли, направляли. Спасибо и процветания
+          вашей студии-игровой!</p>
         <div class="review__author">
-          <span class="review__avatar" aria-hidden="true">?</span>
-          <span><span class="review__name">Имя родителя</span><span class="review__meta">Игровая зона</span></span>
+          <span class="review__avatar" aria-hidden="true">Е</span>
+          <span class="review__who"><span class="review__name">Екатерина Чегурко</span><span class="review__meta">День рождения</span></span>
         </div>
       </article>
+
       <article class="review reveal">
         <div class="review__stars" role="img" aria-label="Оценка 5 из 5">
           <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg>
         </div>
-        <p class="review__text">Текст отзыва о занятиях и мастер-классах будет здесь.</p>
+        <p class="review__text">Ребята с Game Hub — лучшие! С вами ребятам было очень весело!</p>
         <div class="review__author">
-          <span class="review__avatar" aria-hidden="true">?</span>
-          <span><span class="review__name">Имя родителя</span><span class="review__meta">Занятия</span></span>
+          <span class="review__avatar" aria-hidden="true">N</span>
+          <span class="review__who"><span class="review__name wrap-anywhere">@nadezhda_ruchnaya_rabota</span><span class="review__meta">Детский праздник</span></span>
         </div>
       </article>
+    </div>
+
+    <!-- Скриншоты историй из Instagram -->
+    <div class="ig-block reveal">
+      <h3 class="ig-block__title">
+        <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-instagram"/></svg>
+        Из нашего Instagram
+      </h3>
+      <p class="muted ig-block__hint">Нажмите на историю, чтобы прочитать целиком.</p>
+      <div class="ig-strip" data-lightbox>
+        <button class="ig-item" type="button" data-full="assets/img/review-ig-1-full.jpg"
+                aria-label="Открыть отзыв из Instagram: идеальное пространство для детей и подростков">
+          <img src="assets/img/review-ig-1-thumb.jpg" width="360" height="610"
+               loading="lazy" decoding="async"
+               alt="Отзыв из истории Instagram о Game Hub: идеальное пространство для детей и подростков">
+        </button>
+        <button class="ig-item" type="button" data-full="assets/img/review-ig-2-full.jpg"
+                aria-label="Открыть отзыв из Instagram: здесь классно находят подход к детям">
+          <img src="assets/img/review-ig-2-thumb.jpg" width="360" height="610"
+               loading="lazy" decoding="async"
+               alt="Отзыв из истории Instagram о Game Hub: здесь классно находят подход к детям">
+        </button>
+        <button class="ig-item" type="button" data-full="assets/img/review-ig-3-full.jpg"
+                aria-label="Открыть отзыв из Instagram: крутое место для семейного отдыха и дней рождения">
+          <img src="assets/img/review-ig-3-thumb.jpg" width="360" height="610"
+               loading="lazy" decoding="async"
+               alt="Отзыв из истории Instagram о Game Hub: крутое место для семейного отдыха и дней рождения">
+        </button>
+        <button class="ig-item" type="button" data-full="assets/img/review-ig-4-full.jpg"
+                aria-label="Открыть отзыв из Instagram: геймеры играют на хорошем железе">
+          <img src="assets/img/review-ig-4-thumb.jpg" width="360" height="610"
+               loading="lazy" decoding="async"
+               alt="Отзыв из истории Instagram о Game Hub: геймеры играют на хорошем железе">
+        </button>
+        <button class="ig-item" type="button" data-full="assets/img/review-ig-5-full.jpg"
+                aria-label="Открыть отзыв из Instagram: мамы залипают не меньше детей на 3D-рисовании">
+          <img src="assets/img/review-ig-5-thumb.jpg" width="360" height="610"
+               loading="lazy" decoding="async"
+               alt="Отзыв из истории Instagram о Game Hub: мамы залипают не меньше детей на 3D-рисовании">
+        </button>
+      </div>
     </div>
 
   </div>

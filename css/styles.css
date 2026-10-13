@@ -1050,8 +1050,48 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: var(--brand-accent-soft); color: var(--brand-accent);
   font-family: var(--font-display); font-weight: 600;
 }
-.review__name { font-weight: 700; font-size: var(--fs-sm); }
-.review__meta { font-size: var(--fs-xs); color: var(--c-text-muted); }
+.review__who { min-width: 0; }      /* позволяет длинному @-нику переноситься */
+.review__name { font-weight: 700; font-size: var(--fs-sm); display: block; }
+.review__meta { font-size: var(--fs-xs); color: var(--c-text-muted); display: block; }
+
+/* ---------------------------------------------- ЛЕНТА INSTAGRAM (отзывы) - */
+.ig-block { margin-top: var(--space-7); }
+.ig-block__title {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-size: var(--fs-lg); margin-bottom: var(--space-1);
+}
+.ig-block__title svg { width: 24px; height: 24px; color: var(--brand-accent); flex: none; }
+.ig-block__hint { font-size: var(--fs-sm); margin-bottom: var(--space-4); }
+
+/* Горизонтальная лента историй: свайп на телефоне, прокрутка/перетаскивание на десктопе */
+.ig-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 180px;
+  gap: var(--space-3);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding-bottom: var(--space-3);
+  scrollbar-width: thin;
+}
+@media (min-width: 640px) { .ig-strip { grid-auto-columns: 200px; } }
+
+.ig-item {
+  scroll-snap-align: start;
+  display: block; padding: 0; border: 1px solid var(--c-border);
+  border-radius: var(--r-md); overflow: hidden; cursor: pointer;
+  background: var(--brand-dark);
+  aspect-ratio: 9 / 16;
+  transition: transform var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+.ig-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); }
+.ig-item img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top;   /* подпись истории обычно сверху */
+  display: block;
+}
 
 /* ------------------------------------------------------------- БАННЕР --- */
 .cta-banner {

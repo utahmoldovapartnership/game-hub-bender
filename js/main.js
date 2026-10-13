@@ -324,31 +324,41 @@
   var lbClose  = document.getElementById('lbClose');
   var lbPrev   = document.getElementById('lbPrev');
   var lbNext   = document.getElementById('lbNext');
-  var items    = Array.prototype.slice.call(document.querySelectorAll('.gallery__item'));
+  var currentGroup = [];
   var current  = 0;
   var lastFocused = null;
 
   function show(index) {
-    if (!items.length) return;
-    current = (index + items.length) % items.length;
-    var btn = items[current];
+    if (!currentGroup.length) return;
+    current = (index + currentGroup.length) % currentGroup.length;
+    var btn = currentGroup[current];
     var img = btn.querySelector('img');
     lbImg.src = btn.getAttribute('data-full') || (img && img.src) || '';
     lbImg.alt = (img && img.alt) || '';
   }
 
-  function openLightbox(index) {
+  function openLightbox(group, index) {
     if (!lightbox || typeof lightbox.showModal !== 'function') return false;
+    currentGroup = group;
     lastFocused = document.activeElement;
     show(index);
+    // Стрелки нужны только если в группе больше одного изображения
+    var many = group.length > 1;
+    if (lbPrev) lbPrev.hidden = !many;
+    if (lbNext) lbNext.hidden = !many;
     lightbox.showModal();
     lbClose.focus();
     return true;
   }
 
-  items.forEach(function (btn, i) {
-    btn.addEventListener('click', function (e) {
-      if (openLightbox(i)) e.preventDefault();
+  // Каждый контейнер [data-lightbox] — отдельная последовательность:
+  // фотогалерея и лента Instagram листаются независимо друг от друга.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-lightbox]'), function (container) {
+    var group = Array.prototype.slice.call(container.querySelectorAll('[data-full]'));
+    group.forEach(function (btn, i) {
+      btn.addEventListener('click', function (e) {
+        if (openLightbox(group, i)) e.preventDefault();
+      });
     });
   });
 
