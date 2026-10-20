@@ -300,17 +300,32 @@
         },
         {
           "key": "night.p1",
-          "label": "Цена: PlayStation 5",
+          "label": "Цена: PlayStation 5 — сумма",
+          "type": "text"
+        },
+        {
+          "key": "night.p1u",
+          "label": "Цена: PlayStation 5 — единица",
           "type": "text"
         },
         {
           "key": "night.p2",
-          "label": "Цена: Компьютерный зал",
+          "label": "Цена: Компьютерный зал — сумма",
+          "type": "text"
+        },
+        {
+          "key": "night.p2u",
+          "label": "Цена: Компьютерный зал — единица",
           "type": "text"
         },
         {
           "key": "night.p3",
-          "label": "Цена: VR",
+          "label": "Цена: VR — сумма",
+          "type": "text"
+        },
+        {
+          "key": "night.p3u",
+          "label": "Цена: VR — единица",
           "type": "text"
         }
       ]
