@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Game Hub — редактор контента</title>
+<link rel="stylesheet" href="editor.css">
+</head>
+<body>
+
+<!-- SVG-иконки -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="e-gamepad"><path fill="currentColor" d="M176 72a56.06 56.06 0 0 1 56 56v40a32 32 0 0 1-55.27 21.91L160 176H96l-16.73 13.91A32 32 0 0 1 24 168v-40a56.06 56.06 0 0 1 56-56ZM88 112H72V96a8 8 0 0 0-16 0v16H40a8 8 0 0 0 0 16h16v16a8 8 0 0 0 16 0v-16h16a8 8 0 0 0 0-16m72 20a12 12 0 1 0 12-12a12 12 0 0 0-12 12m32-32a12 12 0 1 0 12 12a12 12 0 0 0-12-12"/></g>
+  <g id="e-branch"><path fill="currentColor" d="M232 64a32 32 0 1 0-40 31v9a16 16 0 0 1-16 16h-56a31.8 31.8 0 0 0-16 4.31V95a32 32 0 1 0-16 0v66a32 32 0 1 0 16 0v-1a16 16 0 0 1 16-16h56a32 32 0 0 0 32-32v-9a32.06 32.06 0 0 0 24-31M96 64a16 16 0 1 1 16 16a16 16 0 0 1-16-16m32 128a16 16 0 1 1-16-16a16 16 0 0 1 16 16m72-112a16 16 0 1 1 16-16a16 16 0 0 1-16 16"/></g>
+  <g id="e-gear"><path fill="currentColor" d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32m88-29.84q.06-2.16 0-4.32l14.92-18.64a8 8 0 0 0 1.48-7.06a107.2 107.2 0 0 0-10.88-26.25a8 8 0 0 0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186 40.54a8 8 0 0 0-3.94-6a107.7 107.7 0 0 0-26.25-10.87a8 8 0 0 0-7.06 1.49L130.16 40h-4.32L107.2 25.11a8 8 0 0 0-7.06-1.48A107.6 107.6 0 0 0 73.89 34.5a8 8 0 0 0-3.93 6L67.32 64.27q-1.56 1.49-3 3L40.54 70a8 8 0 0 0-6 3.94a107.7 107.7 0 0 0-10.87 26.25a8 8 0 0 0 1.49 7.06L40 125.84v4.32L25.11 148.8a8 8 0 0 0-1.48 7.06a107.2 107.2 0 0 0 10.88 26.25a8 8 0 0 0 6 3.93l23.72 2.64q1.49 1.56 3 3L70 215.46a8 8 0 0 0 3.94 6a107.7 107.7 0 0 0 26.25 10.87a8 8 0 0 0 7.06-1.49L125.84 216h4.32l18.64 14.92a8 8 0 0 0 7.06 1.48a107.6 107.6 0 0 0 26.25-10.88a8 8 0 0 0 3.93-6l2.64-23.72q1.56-1.48 3-3L215.46 186a8 8 0 0 0 6-3.94a107.7 107.7 0 0 0 10.87-26.25a8 8 0 0 0-1.49-7.06Z"/></g>
+  <g id="e-menu"><path fill="currentColor" d="M224 128a8 8 0 0 1-8 8H40a8 8 0 0 1 0-16h176a8 8 0 0 1 8 8m-184-56h176a8 8 0 0 0 0-16H40a8 8 0 0 0 0 16m176 112H40a8 8 0 0 0 0 16h176a8 8 0 0 0 0-16"/></g>
+  <g id="e-eye"><path fill="currentColor" d="M247.31 124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57 61.26 162.88 48 128 48S61.43 61.26 36.34 86.35C17.51 105.18 9 124 8.69 124.76a8 8 0 0 0 0 6.5c.35.79 8.82 19.57 27.65 38.4C61.43 194.74 93.12 208 128 208s66.57-13.26 91.66-38.34c18.83-18.83 27.3-37.61 27.65-38.4a8 8 0 0 0 0-6.5M128 192c-30.78 0-57.67-11.19-79.93-33.25A133.5 133.5 0 0 1 25 128a133.3 133.3 0 0 1 23.07-30.75C70.33 75.19 97.22 64 128 64s57.67 11.19 79.93 33.25A133.5 133.5 0 0 1 231.05 128c-7.21 13.46-38.62 64-103.05 64m0-112a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32"/></g>
+  <g id="e-reset"><path fill="currentColor" d="M240 56v48a8 8 0 0 1-8 8h-48a8 8 0 0 1 0-16h30.06L182.68 82.68a79.56 79.56 0 0 0-56.13-22.52h-.45a79.52 79.52 0 0 0-55.89 22.77a8 8 0 0 1-11.24-11.38a96 96 0 0 1 135 .79L224 92.69V56a8 8 0 0 1 16 0M193.58 170.07a80 80 0 0 1-112.47-.4L57.94 148H88a8 8 0 0 0 0-16H40a8 8 0 0 0-8 8v48a8 8 0 0 0 16 0v-36.69l23.43 23.43a96 96 0 0 0 135 .79a8 8 0 1 0-11.24-11.38Z"/></g>
+  <g id="e-save"><path fill="currentColor" d="M219.31 72L184 36.69A15.86 15.86 0 0 0 172.69 32H48a16 16 0 0 0-16 16v160a16 16 0 0 0 16 16h160a16 16 0 0 0 16-16V83.31A15.86 15.86 0 0 0 219.31 72M128 192a32 32 0 1 1 32-32a32 32 0 0 1-32 32m24-112H72a8 8 0 0 1-8-8V56a8 8 0 0 1 8-8h80a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8"/></g>
+  <g id="e-download"><path fill="currentColor" d="M224 144v64a16 16 0 0 1-16 16H48a16 16 0 0 1-16-16v-64a8 8 0 0 1 16 0v64h160v-64a8 8 0 0 1 16 0m-101.66 5.66a8 8 0 0 0 11.32 0l40-40a8 8 0 0 0-11.32-11.32L136 124.69V32a8 8 0 0 0-16 0v92.69l-26.34-26.35a8 8 0 0 0-11.32 11.32Z"/></g>
+  <g id="e-check"><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/></g>
+  <g id="e-warn"><path fill="currentColor" d="M236.8 188.09L149.35 36.22a24.76 24.76 0 0 0-42.7 0L19.2 188.09a23.51 23.51 0 0 0 0 23.72A24.35 24.35 0 0 0 40.55 224h174.9a24.35 24.35 0 0 0 21.33-12.19a23.51 23.51 0 0 0 .02-23.72M120 104a8 8 0 0 1 16 0v40a8 8 0 0 1-16 0Zm8 88a12 12 0 1 1 12-12a12 12 0 0 1-12 12"/></g>
+</defs></svg>
+
+<div class="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar" aria-label="Разделы">
+    <div class="sidebar__head">
+      <div class="brand">
+        <span class="brand__logo"><svg viewBox="0 0 256 256"><use href="#e-gamepad"/></svg></span>
+        <span>Game Hub<small>Редактор сайта</small></span>
+      </div>
+      <span class="branch"><svg viewBox="0 0 256 256"><use href="#e-branch"/></svg> main</span>
+    </div>
+    <nav class="nav" id="nav" aria-label="Навигация по разделам"></nav>
+    <div class="sidebar__foot">
+      <span class="status-dot bad" id="statusDot"></span>
+      <span class="status-text"><b id="statusTitle">Не подключено</b><span id="statusSub">Нажмите ⚙️</span></span>
+      <button class="gear" id="gearBtn" type="button" aria-label="Настройки подключения">
+        <svg viewBox="0 0 256 256"><use href="#e-gear"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <div class="topbar">
+      <button class="burger" id="burger" type="button" aria-label="Меню разделов" aria-controls="sidebar">
+        <svg viewBox="0 0 256 256"><use href="#e-menu"/></svg>
+      </button>
+      <div class="crumbs"><b>Game Hub</b> <span id="crumbSection">— Загрузка…</span></div>
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" id="viewLive" href="../index.html" target="_blank" rel="noopener">
+          <svg viewBox="0 0 256 256"><use href="#e-eye"/></svg><span class="btn__text">Открыть сайт</span>
+        </a>
+        <button class="btn btn--ghost" id="resetBtn" type="button">
+          <svg viewBox="0 0 256 256"><use href="#e-reset"/></svg><span class="btn__text">Сбросить</span>
+        </button>
+        <button class="btn btn--primary" id="saveBtn" type="button">
+          <span class="btn__spin"></span>
+          <svg viewBox="0 0 256 256" class="btn__ico"><use href="#e-save"/></svg>
+          <span class="btn__label">Сохранить</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="tabstrip" id="tabstrip" aria-label="Быстрый выбор раздела"></div>
+
+    <div class="content" id="content">
+      <!-- панели секций рендерятся из schema.json -->
+    </div>
+  </div>
+</div>
+
+<!-- бэкдроп для мобильного меню и модалки -->
+<div class="backdrop" id="backdrop"></div>
+
+<!-- модалка настроек -->
+<div class="modal" id="settings" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+  <div class="modal__card">
+    <h2 class="modal__title" id="setTitle">Подключение к GitHub</h2>
+    <p class="modal__sub">Токен хранится только в этом браузере и используется для сохранения изменений.</p>
+    <div class="modal__row">
+      <label for="tokenInput">Персональный токен (PAT)</label>
+      <input class="input" id="tokenInput" type="password" autocomplete="off" placeholder="github_pat_…">
+      <div class="warnbox">Токен даёт право записи в репозиторий. Не передавайте ссылку с токеном посторонним. Используйте точечный токен только для этого репозитория и отзывайте его при необходимости.</div>
+    </div>
+    <div class="modal__row">
+      <label for="repoInput">Репозиторий (owner/repo)</label>
+      <input class="input" id="repoInput" type="text" autocomplete="off" placeholder="owner/repo">
+    </div>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" id="tokenClear" type="button">Удалить токен</button>
+      <button class="btn btn--primary" id="tokenSave" type="button">Сохранить</button>
+    </div>
+  </div>
+</div>
+
+<!-- toast -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg viewBox="0 0 256 256"><use href="#e-check"/></svg><span id="toastMsg"></span>
+</div>
+
+<script src="editor.js" defer></script>
+</body>
+</html>

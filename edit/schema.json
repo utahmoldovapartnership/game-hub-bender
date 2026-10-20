@@ -1,0 +1,454 @@
+{
+  "sections": [
+    {
+      "title": "Контакты и соцсети",
+      "fields": [
+        {
+          "key": "contacts.phoneHref",
+          "label": "Телефон — ссылка для звонка (во всех кнопках)",
+          "type": "text"
+        },
+        {
+          "key": "contacts.instagram",
+          "label": "Instagram — ссылка (во всех кнопках)",
+          "type": "url"
+        },
+        {
+          "key": "contacts.telegram",
+          "label": "Telegram — ссылка (во всех кнопках)",
+          "type": "url"
+        },
+        {
+          "key": "header.phone",
+          "label": "Телефон в шапке (текст)",
+          "type": "text"
+        },
+        {
+          "key": "footer.phone1",
+          "label": "Телефон №1 в подвале (Татьяна)",
+          "type": "text"
+        },
+        {
+          "key": "footer.phone2",
+          "label": "Телефон №2 в подвале (Никита)",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "title": "Первый экран",
+      "fields": [
+        {
+          "key": "hero.titleLead",
+          "label": "Заголовок — начало",
+          "type": "text"
+        },
+        {
+          "key": "hero.titleAccent",
+          "label": "Заголовок — выделенная часть (жёлтым)",
+          "type": "text"
+        },
+        {
+          "key": "hero.lead",
+          "label": "Описание под заголовком",
+          "type": "textarea"
+        },
+        {
+          "key": "hero.cta1",
+          "label": "Кнопка 1 (жёлтая)",
+          "type": "text"
+        },
+        {
+          "key": "hero.cta2",
+          "label": "Кнопка 2",
+          "type": "text"
+        },
+        {
+          "key": "hero.fact1num",
+          "label": "Цифра 1",
+          "type": "text"
+        },
+        {
+          "key": "hero.fact1label",
+          "label": "Подпись к цифре 1",
+          "type": "text"
+        },
+        {
+          "key": "hero.fact2num",
+          "label": "Цифра 2",
+          "type": "text"
+        },
+        {
+          "key": "hero.fact2label",
+          "label": "Подпись к цифре 2",
+          "type": "text"
+        },
+        {
+          "key": "hero.fact3num",
+          "label": "Цифра 3",
+          "type": "text"
+        },
+        {
+          "key": "hero.fact3label",
+          "label": "Подпись к цифре 3",
+          "type": "text"
+        },
+        {
+          "key": "hero.fact4num",
+          "label": "Цифра 4",
+          "type": "text"
+        },
+        {
+          "key": "hero.fact4label",
+          "label": "Подпись к цифре 4",
+          "type": "text"
+        },
+        {
+          "key": "hero.fact5num",
+          "label": "Цифра 5",
+          "type": "text"
+        },
+        {
+          "key": "hero.fact5label",
+          "label": "Подпись к цифре 5",
+          "type": "text"
+        },
+        {
+          "key": "hero.poster",
+          "label": "Постер героя (картинка-заставка видео)",
+          "type": "image"
+        },
+        {
+          "key": "hero.video",
+          "label": "Фоновое видео героя (mp4)",
+          "type": "video"
+        }
+      ]
+    },
+    {
+      "title": "Единый тариф и цены",
+      "fields": [
+        {
+          "key": "rate.title",
+          "label": "Заголовок блока",
+          "type": "text"
+        },
+        {
+          "key": "rate.lead",
+          "label": "Описание блока",
+          "type": "textarea"
+        },
+        {
+          "key": "rate.price",
+          "label": "Цена — крупная",
+          "type": "text"
+        },
+        {
+          "key": "rate.unit",
+          "label": "Единица под ценой",
+          "type": "text"
+        },
+        {
+          "key": "rate.note",
+          "label": "Пояснение на жёлтой карточке",
+          "type": "textarea"
+        },
+        {
+          "key": "sep.ps5hall",
+          "label": "Цена: PlayStation 5 в общем зале",
+          "type": "text"
+        },
+        {
+          "key": "sep.ps5vip",
+          "label": "Цена: PlayStation 5 в отдельной зоне",
+          "type": "text"
+        },
+        {
+          "key": "sep.pc",
+          "label": "Цена: Игровой ПК",
+          "type": "text"
+        },
+        {
+          "key": "sep.vr",
+          "label": "Цена: VR Meta Quest 3",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "title": "Зоны (6 карточек)",
+      "fields": [
+        {
+          "key": "zones.z1title",
+          "label": "PlayStation 5 и Xbox — заголовок",
+          "type": "text"
+        },
+        {
+          "key": "zones.z1text",
+          "label": "PlayStation 5 и Xbox — описание",
+          "type": "textarea"
+        },
+        {
+          "key": "zones.z1img",
+          "label": "PlayStation 5 и Xbox — картинка",
+          "type": "image"
+        },
+        {
+          "key": "zones.z2title",
+          "label": "Игровой компьютерный зал — заголовок",
+          "type": "text"
+        },
+        {
+          "key": "zones.z2text",
+          "label": "Игровой компьютерный зал — описание",
+          "type": "textarea"
+        },
+        {
+          "key": "zones.z2img",
+          "label": "Игровой компьютерный зал — картинка",
+          "type": "image"
+        },
+        {
+          "key": "zones.z3title",
+          "label": "Виртуальная реальность — заголовок",
+          "type": "text"
+        },
+        {
+          "key": "zones.z3text",
+          "label": "Виртуальная реальность — описание",
+          "type": "textarea"
+        },
+        {
+          "key": "zones.z3img",
+          "label": "Виртуальная реальность — картинка",
+          "type": "image"
+        },
+        {
+          "key": "zones.z4title",
+          "label": "3D-рисование — заголовок",
+          "type": "text"
+        },
+        {
+          "key": "zones.z4text",
+          "label": "3D-рисование — описание",
+          "type": "textarea"
+        },
+        {
+          "key": "zones.z4img",
+          "label": "3D-рисование — картинка",
+          "type": "image"
+        },
+        {
+          "key": "zones.z5title",
+          "label": "Интерактивная зона — заголовок",
+          "type": "text"
+        },
+        {
+          "key": "zones.z5text",
+          "label": "Интерактивная зона — описание",
+          "type": "textarea"
+        },
+        {
+          "key": "zones.z5img",
+          "label": "Интерактивная зона — картинка",
+          "type": "image"
+        },
+        {
+          "key": "zones.z6title",
+          "label": "Интерактивная панель — заголовок",
+          "type": "text"
+        },
+        {
+          "key": "zones.z6text",
+          "label": "Интерактивная панель — описание",
+          "type": "textarea"
+        },
+        {
+          "key": "zones.z6img",
+          "label": "Интерактивная панель — картинка",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "title": "Дни рождения и праздники",
+      "fields": [
+        {
+          "key": "parties.lead",
+          "label": "Описание блока праздников",
+          "type": "textarea"
+        }
+      ]
+    },
+    {
+      "title": "Ночные игры",
+      "fields": [
+        {
+          "key": "night.title",
+          "label": "Заголовок",
+          "type": "text"
+        },
+        {
+          "key": "night.lead",
+          "label": "Описание",
+          "type": "textarea"
+        },
+        {
+          "key": "night.btn",
+          "label": "Кнопка",
+          "type": "text"
+        },
+        {
+          "key": "night.p1",
+          "label": "Цена: PlayStation 5",
+          "type": "text"
+        },
+        {
+          "key": "night.p2",
+          "label": "Цена: Компьютерный зал",
+          "type": "text"
+        },
+        {
+          "key": "night.p3",
+          "label": "Цена: VR",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "title": "Наша миссия",
+      "fields": [
+        {
+          "key": "mission.title",
+          "label": "Заголовок",
+          "type": "text"
+        },
+        {
+          "key": "mission.lead",
+          "label": "Описание",
+          "type": "textarea"
+        },
+        {
+          "key": "mission.image",
+          "label": "Картинка (бесплатные занятия)",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "title": "Режим работы (подвал)",
+      "fields": [
+        {
+          "key": "footer.hours",
+          "label": "Режим работы (каждая строка с новой строки)",
+          "type": "ml"
+        }
+      ]
+    },
+    {
+      "title": "Как добраться",
+      "fields": [
+        {
+          "key": "location.lead",
+          "label": "Описание (где мы находимся)",
+          "type": "textarea"
+        },
+        {
+          "key": "location.address",
+          "label": "Адрес (строка с индексом)",
+          "type": "text"
+        },
+        {
+          "key": "location.map",
+          "label": "Google-карта — ссылка для вставки (src из <iframe>)",
+          "type": "map"
+        }
+      ]
+    },
+    {
+      "title": "Партнёр (кафе)",
+      "fields": [
+        {
+          "key": "partner.name",
+          "label": "Название кафе",
+          "type": "text"
+        },
+        {
+          "key": "partner.since",
+          "label": "Бейдж «Работаем с…»",
+          "type": "text"
+        },
+        {
+          "key": "partner.mission",
+          "label": "Миссия кафе",
+          "type": "textarea"
+        },
+        {
+          "key": "partner.logo",
+          "label": "Логотип кафе",
+          "type": "image"
+        },
+        {
+          "key": "partner.link",
+          "label": "Ссылка на сайт кафе",
+          "type": "url"
+        }
+      ]
+    },
+    {
+      "title": "Отзывы",
+      "fields": [
+        {
+          "key": "rev.t1",
+          "label": "Отзыв 1 — текст",
+          "type": "textarea"
+        },
+        {
+          "key": "rev.n1",
+          "label": "Отзыв 1 — автор",
+          "type": "text"
+        },
+        {
+          "key": "rev.t2",
+          "label": "Отзыв 2 — текст",
+          "type": "textarea"
+        },
+        {
+          "key": "rev.n2",
+          "label": "Отзыв 2 — автор",
+          "type": "text"
+        },
+        {
+          "key": "rev.t3",
+          "label": "Отзыв 3 — текст",
+          "type": "textarea"
+        },
+        {
+          "key": "rev.n3",
+          "label": "Отзыв 3 — автор",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "title": "Блок бронирования",
+      "fields": [
+        {
+          "key": "booking.title",
+          "label": "Заголовок",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "title": "Подвал",
+      "fields": [
+        {
+          "key": "footer.tagline",
+          "label": "Текст о центре в подвале",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}

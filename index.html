@@ -116,9 +116,9 @@
     </nav>
 
     <div class="header__actions">
-      <a class="header__phone" href="tel:+37377895477">
+      <a class="header__phone" href="tel:+37377895477" data-edit-href="contacts.phoneHref">
         <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-phone"/></svg>
-        <span>0 778 95 477</span>
+        <span data-edit="header.phone">0 778 95 477</span>
       </a>
       <a class="btn nav-desktop-only" href="#booking">Забронировать</a>
       <button class="burger" id="burger" type="button"
@@ -137,11 +137,11 @@
 <!-- ============================== ГЕРОЙ ============================== -->
 <section class="hero">
   <div class="hero__media">
-    <video id="heroVideo"
+    <video id="heroVideo" data-edit-poster="hero.poster"
            autoplay muted loop playsinline preload="metadata"
            poster="assets/img/hero-poster.jpg"
            aria-hidden="true" tabindex="-1">
-      <source src="assets/video/hero.mp4" type="video/mp4">
+      <source src="assets/video/hero.mp4" type="video/mp4" data-edit-src="hero.video">
     </video>
   </div>
   <div class="hero__scrim"></div>
@@ -159,9 +159,9 @@
       <span id="statusText">Сегодня открыто до 23:00</span>
     </p>
 
-    <h1 class="hero__title">Больше, <em>чем игры</em></h1>
+    <h1 class="hero__title"><span data-edit="hero.titleLead">Больше, </span><em data-edit="hero.titleAccent">чем игры</em></h1>
 
-    <p class="hero__lead">
+    <p class="hero__lead" data-edit="hero.lead">
       PlayStation 5, игровые ПК, VR, 3D-творчество и развивающие занятия — в одном
       пространстве в центре Бендер. Ребёнок свободно выбирает активности и может
       переходить между зонами. VR оплачивается отдельно.
@@ -170,17 +170,17 @@
     <div class="btn-row hero__cta">
       <a class="btn btn--lg" href="#booking">
         <svg class="btn__icon" viewBox="0 0 256 256" aria-hidden="true"><use href="#i-phone"/></svg>
-        Забронировать время
+        <span data-edit="hero.cta1">Забронировать время</span>
       </a>
-      <a class="btn btn--lg btn--on-dark" href="#zones">Посмотреть зоны</a>
+      <a class="btn btn--lg btn--on-dark" href="#zones" data-edit="hero.cta2">Посмотреть зоны</a>
     </div>
 
     <ul class="hero__facts">
-      <li class="fact"><span class="fact__num">5</span><span class="fact__label">PlayStation 5</span></li>
-      <li class="fact"><span class="fact__num">3</span><span class="fact__label">игровых ПК RTX 5060</span></li>
-      <li class="fact"><span class="fact__num">2</span><span class="fact__label">VR Meta Quest 3</span></li>
-      <li class="fact"><span class="fact__num">от 3</span><span class="fact__label">лет</span></li>
-      <li class="fact"><span class="fact__num">100+</span><span class="fact__label">бесплатных занятий в год</span></li>
+      <li class="fact"><span class="fact__num" data-edit="hero.fact1num">5</span><span class="fact__label" data-edit="hero.fact1label">PlayStation 5</span></li>
+      <li class="fact"><span class="fact__num" data-edit="hero.fact2num">3</span><span class="fact__label" data-edit="hero.fact2label">игровых ПК RTX 5060</span></li>
+      <li class="fact"><span class="fact__num" data-edit="hero.fact3num">2</span><span class="fact__label" data-edit="hero.fact3label">VR Meta Quest 3</span></li>
+      <li class="fact"><span class="fact__num" data-edit="hero.fact4num">от 3</span><span class="fact__label" data-edit="hero.fact4label">лет</span></li>
+      <li class="fact"><span class="fact__num" data-edit="hero.fact5num">100+</span><span class="fact__label" data-edit="hero.fact5label">бесплатных занятий в год</span></li>
     </ul>
 
   </div>
@@ -192,8 +192,8 @@
 
     <div class="section__head section__head--center reveal">
       <span class="eyebrow">Главное отличие</span>
-      <h2 class="section__title">Единый тариф — свободный выбор активностей</h2>
-      <p class="section__lead">
+      <h2 class="section__title" data-edit="rate.title">Единый тариф — свободный выбор активностей</h2>
+      <p class="section__lead" data-edit="rate.lead">
         Не нужно заранее выбирать только одну активность. В течение оплаченного
         времени ребёнок может свободно переходить между доступными зонами
         и заниматься тем, что ему интересно. VR оплачивается отдельно.
@@ -241,9 +241,9 @@
 
       <div class="reveal">
         <div class="pricecard">
-          <span class="pricecard__amount">80 ₽</span>
-          <span class="pricecard__unit">/ час за ребёнка</span>
-          <span class="pricecard__note">Ребёнок сам выбирает активности и свободно
+          <span class="pricecard__amount" data-edit="rate.price">80 ₽</span>
+          <span class="pricecard__unit" data-edit="rate.unit">/ час за ребёнка</span>
+          <span class="pricecard__note" data-edit="rate.note">Ребёнок сам выбирает активности и свободно
             переходит между зонами</span>
         </div>
       </div>
@@ -262,7 +262,7 @@
       <article class="package">
         <h4 class="package__name">PlayStation 5 в общем зале</h4>
         <p class="package__for">1 PlayStation 5 + 2 джойстика</p>
-        <p class="package__price">80 ₽</p>
+        <p class="package__price" data-edit="sep.ps5hall">80 ₽</p>
         <p class="package__unit">/ час</p>
         <ul class="package__list">
           <li><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-check"/></svg>Основной зал PlayStation</li>
@@ -273,7 +273,7 @@
       <article class="package">
         <h4 class="package__name">PlayStation 5 в отдельной зоне</h4>
         <p class="package__for">1 PlayStation 5 + 2 джойстика</p>
-        <p class="package__price">100 ₽</p>
+        <p class="package__price" data-edit="sep.ps5vip">100 ₽</p>
         <p class="package__unit">/ час</p>
         <ul class="package__list">
           <li><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-check"/></svg>Отдельная VIP-зона</li>
@@ -284,7 +284,7 @@
       <article class="package">
         <h4 class="package__name">Игровой ПК</h4>
         <p class="package__for">Один компьютер</p>
-        <p class="package__price">40 ₽</p>
+        <p class="package__price" data-edit="sep.pc">40 ₽</p>
         <p class="package__unit">/ час</p>
         <ul class="package__list">
           <li><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-check"/></svg>RTX 5060, 27" 165 Гц</li>
@@ -296,7 +296,7 @@
         <span class="package__badge">Докупается отдельно</span>
         <h4 class="package__name">VR Meta Quest 3</h4>
         <p class="package__for">По отдельности или вместе</p>
-        <p class="package__price">30 ₽</p>
+        <p class="package__price" data-edit="sep.vr">30 ₽</p>
         <p class="package__unit">за 10 минут</p>
         <ul class="package__list">
           <li><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-check"/></svg>2 шлема Meta Quest 3</li>
@@ -351,12 +351,12 @@
 
       <article class="zone">
         <div class="zone__figure">
-          <img src="assets/img/photo-19-640.jpg" srcset="assets/img/photo-19-640.jpg 640w, assets/img/photo-19-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Подросток играет на PlayStation 5 на большом экране в игровом зале Game Hub">
+          <img data-edit-src="zones.z1img" src="assets/img/photo-19-640.jpg" srcset="assets/img/photo-19-640.jpg 640w, assets/img/photo-19-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Подросток играет на PlayStation 5 на большом экране в игровом зале Game Hub">
           <span class="zone__tag" style="--tag: var(--tag-playstation)">PlayStation</span>
         </div>
         <div class="zone__body">
-          <h3 class="zone__title">PlayStation 5 и Xbox</h3>
-          <p class="zone__text">
+          <h3 class="zone__title" data-edit="zones.z1title">PlayStation 5 и Xbox</h3>
+          <p class="zone__text" data-edit="zones.z1text">
             Основной зал, детская игровая зона и отдельная VIP-зона. Большие экраны,
             любимые игры и место, где можно играть вместе с друзьями.
           </p>
@@ -370,12 +370,12 @@
 
       <article class="zone">
         <div class="zone__figure">
-          <img src="assets/img/photo-25-640.jpg" srcset="assets/img/photo-25-640.jpg 640w, assets/img/photo-25-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Подростки за игровыми компьютерами в компьютерном кабинете Game Hub">
+          <img data-edit-src="zones.z2img" src="assets/img/photo-25-640.jpg" srcset="assets/img/photo-25-640.jpg 640w, assets/img/photo-25-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Подростки за игровыми компьютерами в компьютерном кабинете Game Hub">
           <span class="zone__tag" style="--tag: var(--tag-pc)">Игровые ПК</span>
         </div>
         <div class="zone__body">
-          <h3 class="zone__title">Игровой компьютерный зал</h3>
-          <p class="zone__text">
+          <h3 class="zone__title" data-edit="zones.z2title">Игровой компьютерный зал</h3>
+          <p class="zone__text" data-edit="zones.z2text">
             Отдельный игровой зал с тремя мощными ПК: Intel Core i5-14400F, RTX 5060,
             16 ГБ оперативной памяти, SSD 1 ТБ и мониторами 27″ с частотой 165 Гц.
             При необходимости нужную игру можно установить по предварительной
@@ -391,12 +391,12 @@
 
       <article class="zone">
         <div class="zone__figure">
-          <img src="assets/img/vr-zone-640.jpg" srcset="assets/img/vr-zone-640.jpg 640w, assets/img/vr-zone-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Двое подростков в VR-шлемах Meta Quest 3 играют вместе в зоне виртуальной реальности Game Hub">
+          <img data-edit-src="zones.z3img" src="assets/img/vr-zone-640.jpg" srcset="assets/img/vr-zone-640.jpg 640w, assets/img/vr-zone-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Двое подростков в VR-шлемах Meta Quest 3 играют вместе в зоне виртуальной реальности Game Hub">
           <span class="zone__tag" style="--tag: var(--tag-vr)">VR</span>
         </div>
         <div class="zone__body">
-          <h3 class="zone__title">Виртуальная реальность</h3>
-          <p class="zone__text">
+          <h3 class="zone__title" data-edit="zones.z3title">Виртуальная реальность</h3>
+          <p class="zone__text" data-edit="zones.z3text">
             Два шлема Meta Quest 3 позволяют играть как по отдельности, так и вместе
             в совместных VR-играх. Полное погружение в виртуальный мир и возможность
             разделить впечатления с другом.
@@ -411,12 +411,12 @@
 
       <article class="zone">
         <div class="zone__figure">
-          <img src="assets/img/zone-3d-640.jpg" srcset="assets/img/zone-3d-640.jpg 640w, assets/img/zone-3d-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Дети рисуют 3D-ручками за общим столом творческой зоны, рядом — готовые объёмные фигуры">
+          <img data-edit-src="zones.z4img" src="assets/img/zone-3d-640.jpg" srcset="assets/img/zone-3d-640.jpg 640w, assets/img/zone-3d-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Дети рисуют 3D-ручками за общим столом творческой зоны, рядом — готовые объёмные фигуры">
           <span class="zone__tag" style="--tag: var(--tag-3d)">Творчество</span>
         </div>
         <div class="zone__body">
-          <h3 class="zone__title">3D-рисование</h3>
-          <p class="zone__text">
+          <h3 class="zone__title" data-edit="zones.z4title">3D-рисование</h3>
+          <p class="zone__text" data-edit="zones.z4text">
             Дети создают объёмные изделия с помощью 3D-ручек — от простых фигур
             до собственных проектов. Такие занятия развивают воображение, мелкую
             моторику, пространственное мышление и усидчивость.
@@ -431,12 +431,12 @@
 
       <article class="zone">
         <div class="zone__figure">
-          <img src="assets/img/photo-21-640.jpg" srcset="assets/img/photo-21-640.jpg 640w, assets/img/photo-21-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Магнитный конструктор и развивающие игрушки интерактивной зоны">
+          <img data-edit-src="zones.z5img" src="assets/img/photo-21-640.jpg" srcset="assets/img/photo-21-640.jpg 640w, assets/img/photo-21-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Магнитный конструктор и развивающие игрушки интерактивной зоны">
           <span class="zone__tag" style="--tag: var(--tag-toys)">Конструкторы</span>
         </div>
         <div class="zone__body">
-          <h3 class="zone__title">Интерактивная зона</h3>
-          <p class="zone__text">
+          <h3 class="zone__title" data-edit="zones.z5title">Интерактивная зона</h3>
+          <p class="zone__text" data-edit="zones.z5text">
             Электронные конструкторы, магнитные наборы и интерактивные игрушки
             помогают развивать логику, пространственное и инженерное мышление,
             а также интерес к технике.
@@ -451,12 +451,12 @@
 
       <article class="zone">
         <div class="zone__figure">
-          <img src="assets/img/photo-16-640.jpg" srcset="assets/img/photo-16-640.jpg 640w, assets/img/photo-16-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Девочка у большой интерактивной панели Game Hub с викториной на экране">
+          <img data-edit-src="zones.z6img" src="assets/img/photo-16-640.jpg" srcset="assets/img/photo-16-640.jpg 640w, assets/img/photo-16-1280.jpg 1280w" sizes="(min-width:1024px) 380px, (min-width:640px) 50vw, 100vw" width="640" height="360" loading="lazy" decoding="async" alt="Девочка у большой интерактивной панели Game Hub с викториной на экране">
           <span class="zone__tag zone__tag--onlight" style="--tag: var(--brand-primary)">Обучение</span>
         </div>
         <div class="zone__body">
-          <h3 class="zone__title">Интерактивная панель</h3>
-          <p class="zone__text">
+          <h3 class="zone__title" data-edit="zones.z6title">Интерактивная панель</h3>
+          <p class="zone__text" data-edit="zones.z6text">
             Большой сенсорный экран для интерактивных викторин, обучающих игр,
             командных заданий и цифровых занятий. Дети не только участвуют в играх
             и викторинах, но и учатся создавать собственные задания.
@@ -557,7 +557,7 @@
     <div class="section__head reveal">
       <span class="eyebrow">Дни рождения и мероприятия</span>
       <h2 class="section__title">Три формата праздника</h2>
-      <p class="section__lead">
+      <p class="section__lead" data-edit="parties.lead">
         Выберите подходящий формат в зависимости от количества детей и того,
         хотите ли вы забронировать отдельную игровую зону или всё пространство
         студии для своей компании. Праздники, групповые мероприятия и специальные
@@ -703,16 +703,16 @@
           <svg viewBox="0 0 256 256" width="14" height="14" aria-hidden="true"><use href="#i-moon"/></svg>
           После 23:00
         </span>
-        <h2 class="section__title">Ночные игровые сессии</h2>
-        <p class="section__lead" style="margin-bottom: var(--space-5)">
+        <h2 class="section__title" data-edit="night.title">Ночные игровые сессии</h2>
+        <p class="section__lead" style="margin-bottom: var(--space-5)" data-edit="night.lead">
           Формат для подростков и геймеров: своя компания, хорошее железо и никакой
           спешки. После 23:00 Game Hub работает только по предварительной брони
           для компаний от 2 человек.
         </p>
         <div class="btn-row">
-          <a class="btn btn--lg" href="tel:+37377895477">
+          <a class="btn btn--lg" href="tel:+37377895477" data-edit-href="contacts.phoneHref">
             <svg class="btn__icon" viewBox="0 0 256 256" aria-hidden="true"><use href="#i-phone"/></svg>
-            Забронировать ночную игру
+            <span data-edit="night.btn">Забронировать ночную игру</span>
           </a>
         </div>
       </div>
@@ -721,17 +721,17 @@
         <li>
           <span class="nightprice__name">PlayStation 5
             <span class="nightprice__sub">Игровая зона</span></span>
-          <span class="nightprice__val">100 ₽<small>в час</small></span>
+          <span class="nightprice__val" data-edit-ml="night.p1">100 ₽<small>в час</small></span>
         </li>
         <li>
           <span class="nightprice__name">Игровой компьютерный зал
             <span class="nightprice__sub">Игровые ПК, RTX 5060</span></span>
-          <span class="nightprice__val">60 ₽<small>в час</small></span>
+          <span class="nightprice__val" data-edit-ml="night.p2">60 ₽<small>в час</small></span>
         </li>
         <li>
           <span class="nightprice__name">VR Meta Quest 3
             <span class="nightprice__sub">Виртуальная реальность</span></span>
-          <span class="nightprice__val">50 ₽<small>за 10 минут</small></span>
+          <span class="nightprice__val" data-edit-ml="night.p3">50 ₽<small>за 10 минут</small></span>
         </li>
       </ul>
 
@@ -753,8 +753,8 @@
 
     <div class="section__head section__head--center reveal">
       <span class="eyebrow">Наша миссия</span>
-      <h2 class="section__title">Технологии должны быть доступны каждому ребёнку</h2>
-      <p class="section__lead">
+      <h2 class="section__title" data-edit="mission.title">Технологии должны быть доступны каждому ребёнку</h2>
+      <p class="section__lead" data-edit="mission.lead">
         Game Hub создавался не только как игровое, но и как развивающее пространство.
         Часть нашей работы — бесплатные образовательные и творческие занятия.
       </p>
@@ -789,7 +789,7 @@
 
       <div class="reveal">
         <div class="mission__media" style="margin-bottom: var(--space-5)">
-          <img src="assets/img/photo-26-1280.jpg" srcset="assets/img/photo-26-640.jpg 640w, assets/img/photo-26-1280.jpg 1280w" sizes="(min-width:900px) 560px, 100vw" width="1280" height="960" loading="lazy" decoding="async" alt="Группа детей за столами на творческом занятии с 3D-ручками в Game Hub">
+          <img data-edit-src="mission.image" src="assets/img/photo-26-1280.jpg" srcset="assets/img/photo-26-640.jpg 640w, assets/img/photo-26-1280.jpg 1280w" sizes="(min-width:900px) 560px, 100vw" width="1280" height="960" loading="lazy" decoding="async" alt="Группа детей за столами на творческом занятии с 3D-ручками в Game Hub">
         </div>
         <h3 style="font-size: var(--fs-lg)">Бесплатные занятия</h3>
         <p class="muted">
@@ -892,11 +892,11 @@
         <div class="review__stars" role="img" aria-label="Оценка 5 из 5">
           <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg>
         </div>
-        <p class="review__text">Спасибо огромное за праздник и ваше гостеприимство 💗
+        <p class="review__text" data-edit="rev.t1">Спасибо огромное за праздник и ваше гостеприимство 💗
           Было очень здорово! Очень рада, что отмечали у вас!</p>
         <div class="review__author">
           <span class="review__avatar" aria-hidden="true">K</span>
-          <span class="review__who"><span class="review__name wrap-anywhere">@kolchinaolechka</span><span class="review__meta">Детский праздник</span></span>
+          <span class="review__who"><span class="review__name wrap-anywhere" data-edit="rev.n1">@kolchinaolechka</span><span class="review__meta">Детский праздник</span></span>
         </div>
       </article>
 
@@ -904,14 +904,14 @@
         <div class="review__stars" role="img" aria-label="Оценка 5 из 5">
           <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg>
         </div>
-        <p class="review__text">Выражаем вам, Татьяна, и вашим администраторам огромную
+        <p class="review__text" data-edit="rev.t2">Выражаем вам, Татьяна, и вашим администраторам огромную
           благодарность за вчерашний праздник! 😍🎉 Всё прошло замечательно, именинник
           получил массу приятных эмоций, гости не хотели уходить! Администраторы всегда
           помогали деткам, подсказывали, исправляли, направляли. Спасибо и процветания
           вашей студии-игровой!</p>
         <div class="review__author">
           <span class="review__avatar" aria-hidden="true">Е</span>
-          <span class="review__who"><span class="review__name">Екатерина Чегурко</span><span class="review__meta">День рождения</span></span>
+          <span class="review__who"><span class="review__name" data-edit="rev.n2">Екатерина Чегурко</span><span class="review__meta">День рождения</span></span>
         </div>
       </article>
 
@@ -919,10 +919,10 @@
         <div class="review__stars" role="img" aria-label="Оценка 5 из 5">
           <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg><svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-star"/></svg>
         </div>
-        <p class="review__text">Ребята с Game Hub — лучшие! С вами ребятам было очень весело!</p>
+        <p class="review__text" data-edit="rev.t3">Ребята с Game Hub — лучшие! С вами ребятам было очень весело!</p>
         <div class="review__author">
           <span class="review__avatar" aria-hidden="true">N</span>
-          <span class="review__who"><span class="review__name wrap-anywhere">@nadezhda_ruchnaya_rabota</span><span class="review__meta">Детский праздник</span></span>
+          <span class="review__who"><span class="review__name wrap-anywhere" data-edit="rev.n3">@nadezhda_ruchnaya_rabota</span><span class="review__meta">Детский праздник</span></span>
         </div>
       </article>
     </div>
@@ -1014,7 +1014,7 @@
     <div class="section__head reveal">
       <span class="eyebrow">Как добраться</span>
       <h2 class="section__title">Мы в самом центре Бендер</h2>
-      <p class="section__lead">
+      <p class="section__lead" data-edit="location.lead">
         Game Hub находится в центре Бендер, рядом с Преображенским сквером,
         церковью и торговым центром «Пассаж».
       </p>
@@ -1029,7 +1029,7 @@
             <span>
               <span class="contactlist__label">Адрес</span>
               <strong style="font-family: var(--font-display); font-size: var(--fs-md)">
-                г. Бендеры, ул. Калинина, 23</strong>
+                <span data-edit="location.address">г. Бендеры, ул. Калинина, 23</span></strong>
               <br><span class="muted" style="font-size: var(--fs-sm)">2-й этаж, вход через Café Street Food</span>
             </span>
           </li>
@@ -1061,7 +1061,7 @@
       <div class="map reveal">
         <!-- Карта Google. Язык задаётся параметрами !1sru!2s в конце ссылки. -->
         <iframe
-          class="map__frame"
+          class="map__frame" data-edit-src="location.map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.9934259333127!2d29.47805037583912!3d46.824130541683346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c907d085f7edab%3A0x17f1f0810465dfc5!2sGame%20Hub!5e0!3m2!1sru!2s!4v1791185840558!5m2!1sru!2s"
           title="Game Hub на карте: г. Бендеры, ул. Калинина, 23"
           width="600" height="450"
@@ -1245,10 +1245,10 @@
     </div>
 
     <article class="partner reveal">
-      <a class="partner__logo" href="https://street-food-pmr.ru/"
+      <a class="partner__logo" data-edit-href="partner.link" href="https://street-food-pmr.ru/"
          target="_blank" rel="noopener noreferrer"
          aria-label="Открыть сайт кафе Street Food в новой вкладке">
-        <img src="assets/brand/streetfood-260.png"
+        <img data-edit-src="partner.logo" src="assets/brand/streetfood-260.png"
              srcset="assets/brand/streetfood-260.png 260w, assets/brand/streetfood-520.png 520w"
              sizes="(min-width: 760px) 260px, 180px"
              width="260" height="312" loading="lazy" decoding="async"
@@ -1256,14 +1256,14 @@
       </a>
 
       <div class="partner__body">
-        <h3 class="partner__name">Семейное кафе Street Food</h3>
-        <p class="partner__since">Работаем с 2018 года</p>
+        <h3 class="partner__name" data-edit="partner.name">Семейное кафе Street Food</h3>
+        <p class="partner__since" data-edit="partner.since">Работаем с 2018 года</p>
         <p>
           У нас есть любимая еда для каждого и большое пространство для всей семьи.
           Здесь проходят лучшие детские праздники — вкусные и весёлые. А ещё мы
           доставляем ваши любимые блюда прямо к вам.
         </p>
-        <p class="partner__mission">
+        <p class="partner__mission" data-edit="partner.mission">
           Наша миссия — готовить с ответственностью, подавать с любовью.
         </p>
         <a class="btn" href="https://street-food-pmr.ru/"
@@ -1280,22 +1280,22 @@
 <section class="section" id="booking">
   <div class="container">
     <div class="cta-banner reveal">
-      <h2 class="cta-banner__title">Забронируйте время за одну минуту</h2>
+      <h2 class="cta-banner__title" data-edit="booking.title">Забронируйте время за одну минуту</h2>
       <p>
         Звонок — самый быстрый способ узнать свободное время, загруженность студии
         и подобрать подходящий формат. Администраторы ответят и подскажут всё по
         праздникам, зонам и ценам.
       </p>
       <div class="btn-row">
-        <a class="btn btn--lg" href="tel:+37377895477">
+        <a class="btn btn--lg" href="tel:+37377895477" data-edit-href="contacts.phoneHref">
           <svg class="btn__icon" viewBox="0 0 256 256" aria-hidden="true"><use href="#i-phone"/></svg>
           0 778 95 477 — позвонить
         </a>
-        <a class="btn btn--lg btn--ghost" href="https://www.instagram.com/gamehub_bender/" target="_blank" rel="noopener noreferrer">
+        <a class="btn btn--lg btn--ghost" href="https://www.instagram.com/gamehub_bender/" data-edit-href="contacts.instagram" target="_blank" rel="noopener noreferrer">
           <svg class="btn__icon" viewBox="0 0 256 256" aria-hidden="true"><use href="#i-instagram"/></svg>
           Instagram
         </a>
-        <a class="btn btn--lg btn--ghost" href="https://t.me/+37377895477" target="_blank" rel="noopener noreferrer">
+        <a class="btn btn--lg btn--ghost" href="https://t.me/+37377895477" data-edit-href="contacts.telegram" target="_blank" rel="noopener noreferrer">
           <svg class="btn__icon" viewBox="0 0 256 256" aria-hidden="true"><use href="#i-telegram"/></svg>
           Telegram
         </a>
@@ -1321,14 +1321,14 @@
           <svg class="logo__mark" viewBox="0 0 256 256" aria-hidden="true"><use href="#i-gamepad"/></svg>
           <span class="logo__text">GAME<b>HUB</b><span class="logo__sub">Бендеры</span></span>
         </a>
-        <p style="font-size: var(--fs-sm)">
+        <p style="font-size: var(--fs-sm)" data-edit="footer.tagline">
           Пространство игр, технологий и творчества для детей, подростков
           и всей семьи.
         </p>
         <ul class="social" style="margin-top: var(--space-4)">
-          <li><a href="https://www.instagram.com/gamehub_bender/" target="_blank" rel="noopener noreferrer" aria-label="Game Hub в Instagram">
+          <li><a href="https://www.instagram.com/gamehub_bender/" data-edit-href="contacts.instagram" target="_blank" rel="noopener noreferrer" aria-label="Game Hub в Instagram">
             <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
-          <li><a href="https://t.me/+37377895477" target="_blank" rel="noopener noreferrer" aria-label="Game Hub в Telegram">
+          <li><a href="https://t.me/+37377895477" data-edit-href="contacts.telegram" target="_blank" rel="noopener noreferrer" aria-label="Game Hub в Telegram">
             <svg viewBox="0 0 256 256" aria-hidden="true"><use href="#i-telegram"/></svg></a></li>
         </ul>
       </div>
@@ -1348,9 +1348,9 @@
       <div>
         <h3>Контакты</h3>
         <ul class="footer__links">
-          <li><a href="tel:+37377895477">0 778 95 477 — Татьяна</a></li>
-          <li><a href="tel:+37377873236">0 778 73 236 — Никита</a></li>
-          <li><a href="https://www.instagram.com/gamehub_bender/" target="_blank" rel="noopener noreferrer">@gamehub_bender</a></li>
+          <li><a href="tel:+37377895477" data-edit-href="contacts.phoneHref" data-edit="footer.phone1">0 778 95 477 — Татьяна</a></li>
+          <li><a href="tel:+37377873236" data-edit="footer.phone2">0 778 73 236 — Никита</a></li>
+          <li><a href="https://www.instagram.com/gamehub_bender/" data-edit-href="contacts.instagram" target="_blank" rel="noopener noreferrer">@gamehub_bender</a></li>
         </ul>
         <p style="margin-top: var(--space-4); font-size: var(--fs-sm)">
           г. Бендеры, ул. Калинина, 23<br>
@@ -1361,9 +1361,9 @@
       <div>
         <h3>Режим работы</h3>
         <p style="font-size: var(--fs-sm)">
-          Пн — Пт: 12:00 — 22:00<br>
+          <span data-edit-ml="footer.hours">Пн — Пт: 12:00 — 22:00<br>
           Сб — Вс: 10:00 — 23:00<br>
-          Летом: ежедневно 10:00 — 23:00
+          Летом: ежедневно 10:00 — 23:00</span>
         </p>
         <p style="font-size: var(--fs-sm); margin-top: var(--space-3)">
           Ночные игры и мероприятия — по предварительной брони.
@@ -1387,7 +1387,7 @@
 
 <!-- ============================== МОБИЛЬНАЯ CTA-ПАНЕЛЬ ============================== -->
 <div class="mobilebar" id="mobilebar">
-  <a class="btn" href="tel:+37377895477">
+  <a class="btn" href="tel:+37377895477" data-edit-href="contacts.phoneHref">
     <svg class="btn__icon" viewBox="0 0 256 256" aria-hidden="true"><use href="#i-phone"/></svg>
     Позвонить
   </a>
@@ -1410,6 +1410,7 @@
   </button>
 </dialog>
 
+<script src="js/content-loader.js" defer></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>
