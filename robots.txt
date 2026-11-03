@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /edit/
+
+Sitemap: https://game-hub-bender.vercel.app/sitemap.xml
